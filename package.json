@@ -6,10 +6,18 @@
   "scripts": {
     "test": "node index.js"
   },
+  "bugs": {
+    "url": "https://github.com/colohr/axy/issues"
+  },
+  "homepage": "https://github.com/colohr/axy#readme",
   "author": "colohr",
   "license": "ISC",
   "dependencies": {
     "google-auth-library": "^0.10.0",
     "googleapis": "^20.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colohr/axy.git"
   }
 }
