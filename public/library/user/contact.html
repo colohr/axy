@@ -1,0 +1,129 @@
+<template id="user-contact">
+    <style>
+        @import "/modules/wwi/component/design/host.css";
+        :host{
+            display:none;
+	        padding:5px;
+	        position: relative;
+	        background-color: var(--rose);
+	        overflow: hidden;
+	        margin:5px;
+	        border-radius: 7px;
+        }
+
+        [view] div{
+	        position: relative;
+        }
+
+        [value]{
+	        padding:5px;
+        }
+
+        [value] > div{
+	        display: inline-block;
+	        position: relative;
+        }
+
+	    [data-label]{
+		    font-style: italic;
+		    font-size:14px;
+		    margin-right:8px;
+	    }
+
+	    [data-value]{
+		    font-size:14px;
+		    font-weight: 900;
+	    }
+
+        :host([visitor]) [value]{
+            display: none;
+        }
+        :host([data]){
+            display:block;
+        }
+
+    </style>
+    <div view gui vertical>
+
+    </div>
+</template>
+<script>
+    (function(doc){
+        const UserContact = wwi.element(doc)
+
+	    const contact_elements = {
+        	Name:'display-name',
+		    Email:'email'
+	    }
+
+        UserContact(class extends UserContact.Element{
+        	constructor(){
+        		super('routes',{
+        			data(data){
+        				if(data !== null){
+        					for(let name in data){
+        						let value = data[name]
+						        let element = this.element(name)
+						        if(element) element.innerHTML = value
+					        }
+					        if(data.is_anonymous) this.setAttribute('visitor','')
+                            else this.removeAttribute('visitor')
+				        }
+				        else{
+        					let values = this.values
+                            for(let value of values) value.innerHTML = ''
+                        }
+			        }
+		        })
+	        }
+	        connected(){
+				set_elements(this)
+	        }
+	        element(name){
+	        	let selector = fxy.id.dash(name)
+		        return this.query(`[${selector}]`)
+	        }
+	        get values(){ return this.all('[data-value]') }
+
+        })
+
+		//shared actions
+	    function get_value_elements(){
+        	let elements = []
+        	for(let title in contact_elements){
+        		let name = contact_elements[title]
+
+        		let value = document.createElement('div')
+		        value.setAttribute('value','')
+		        value.setAttribute('gui','')
+		        value.setAttribute('horizontal','')
+
+		        let label = document.createElement('div')
+		        label.setAttribute('data-label','')
+		        label.setAttribute('gui','')
+		        label.setAttribute('vertical','')
+		        label.innerHTML = `${title}:`
+
+		        let element = document.createElement('div')
+		        element.setAttribute('data-value','')
+		        element.setAttribute('gui','')
+		        element.setAttribute('vertical','')
+		        element.setAttribute(name,'')
+
+		        value.appendChild(label)
+		        value.appendChild(element)
+		        elements.push(value)
+	        }
+	        return elements
+	    }
+
+	    function set_elements(user_contact){
+			let elements = get_value_elements()
+		    for(let element of elements){
+				user_contact.view.appendChild(element)
+		    }
+		    return null
+	    }
+
+    })(document)
+</script>

@@ -1,0 +1,23 @@
+library = {}
+
+library.logic = [
+	'control/api.es6',
+	'control/user.es6',
+	'control/calendar.es6',
+	'control/providers.es6',
+	'control/firebase/database.es6',
+	'control/firebase/user.es6',
+	'control/firebase/api.es6'
+]
+
+library.elements = [
+	'user/contact.html',
+	{
+		path:'user/account.html',
+		wait:['user-contact']
+	},
+	{
+		path:'calendar/index.html',
+		wait:['user-account']
+	}
+]

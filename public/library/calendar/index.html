@@ -1,0 +1,41 @@
+<template id="user-calendar">
+    <style>
+        @import "/modules/wwi/component/design/host.css";
+        :host{
+            display:none;
+	        background-color: var(--cream-light);
+	        padding:6px;
+	        border-radius: 7px;
+        }
+	    [title]{
+		    font-size:30px;
+		    font-weight: 900;
+		    color:var(--chocolate);
+	    }
+        a[role=button]{
+            display: inline-block;
+            position:relative;
+            border-radius: 100px;
+            font-weight: 900;
+            font-size:20px;
+            color:var(--teal-bright);
+            background-color: var(--chocolate);
+            padding:5px 18px;
+            margin-top:10px;
+        }
+    </style>
+    <div view gui vertical center-center>
+       <div title>User Calendar</div>
+        <div style="margin-top:10px;">
+            <a role="button">Login</a>
+        </div>
+    </div>
+</template>
+<script>
+    (function(doc){
+        const UserCalendar = wwi.element(doc)
+	    UserCalendar(class extends UserCalendar.Element{
+
+        })
+    })(document)
+</script>
