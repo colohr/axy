@@ -1,10 +1,10 @@
 {
   "name": "axy",
-  "version": "0.0.1",
-  "description": "API Proxy",
-  "main": "index.js",
+  "version": "0.0.2",
+  "description": "API Toolbox",
+  "main": "package/index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node test/index.js"
   },
   "bugs": {
     "url": "https://github.com/colohr/axy/issues"
@@ -13,10 +13,8 @@
   "author": "colohr",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3",
-    "fxy": "^0.1.5",
-    "google-auth-library": "^0.10.0",
-    "googleapis": "^20.1.0"
+    "fxy":"^0.1.724",
+    "hyper": "file:modules/hyper"
   },
   "repository": {
     "type": "git",
