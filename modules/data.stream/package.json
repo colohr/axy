@@ -3,7 +3,9 @@
   "bugs": {
     "url": "https://github.com/colohr/axy/issues"
   },
-  "description": "Hyper-text request, request-promise, fetch, http interface to get, post to uniform resource locator (URLs)",
+  "dependencies": {
+  },
+  "description": "Streams for file upload with router middleware + MongoDB storage using GridFS.",
   "directories": {
     "test": "test",
     "package": "package"
@@ -11,7 +13,7 @@
   "homepage": "https://github.com/colohr/axy#readme",
   "license": "ISC",
   "main": "package/index.js",
-  "name": "hyper",
+  "name": "data.stream",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/colohr/axy.git"

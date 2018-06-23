@@ -3,15 +3,18 @@
   "bugs": {
     "url": "https://github.com/colohr/axy/issues"
   },
-  "description": "Hyper-text request, request-promise, fetch, http interface to get, post to uniform resource locator (URLs)",
+  "dependencies": {
+    "data.stream": "file:../data.stream/"
+  },
+  "description": "MongoDB",
   "directories": {
     "test": "test",
     "package": "package"
   },
   "homepage": "https://github.com/colohr/axy#readme",
   "license": "ISC",
-  "main": "package/index.js",
-  "name": "hyper",
+  "main": "./package/index.js",
+  "name": "data.base",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/colohr/axy.git"

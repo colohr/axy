@@ -1,7 +1,12 @@
 {
   "name": "axy",
-  "version": "0.0.2",
+  "version": "0.0.14",
   "description": "API Toolbox",
+  "directories": {
+    "test": "test",
+    "modules": "modules",
+    "package": "package"
+  },
   "main": "package/index.js",
   "scripts": {
     "test": "node test/index.js"
@@ -14,7 +19,11 @@
   "license": "ISC",
   "dependencies": {
     "fxy":"^0.1.724",
-    "hyper": "file:modules/hyper"
+    "mongodb": "^3.1.0-beta4",
+    "minimatch": "^3.0.4",
+    "hyper":"file:modules/hyper",
+    "data.base": "file:modules/data.base"
+
   },
   "repository": {
     "type": "git",
